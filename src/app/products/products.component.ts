@@ -21,7 +21,6 @@ category: string;
     categoryService: CategoryService) { 
     productService.getAll().subscribe(products => this.products = products) ;
 
-    this.categories$= categoryService.getAll();
     route.queryParamMap.subscribe(params =>{
       this.category=params.get('category');
 
