@@ -29,6 +29,7 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductService } from './product.service';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ProductService } from './product.service';
     AdminOrdersComponent,
     ProductFilterComponent,
     ProductFormComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
