@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from './../category.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 
@@ -8,8 +10,17 @@ import { ProductService } from '../product.service';
 })
 export class ProductsComponent {
 products$;
-  constructor(productService: ProductService) { 
-    this.products$= productService.getAll();
+categories$;
+category: string;
+ 
+  constructor(
+    route: ActivatedRoute,
+    productService: ProductService, categoryService: CategoryService) { 
+    this.products$ = productService.getAll();
+    this.categories$= categoryService.getAll();
+    route.queryParamMap.subscribe(params =>{
+      this.category=params.get('category');
+    });
 
 }
 }
