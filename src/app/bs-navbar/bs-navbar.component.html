@@ -8,7 +8,12 @@
     <ul class="navbar-nav mr-auto">
       
       <li class="nav-item">
-        <a class="nav-link" routerLink="/shopping-chart">Shopping Chart</a>
+        <a class="nav-link" routerLink="/shopping-chart">
+          Shopping Chart
+          <span class="badge badge-warning badge-pill">
+            {{shoppingCartItemCount}}
+          </span>
+        </a>
       </li>
       <ng-template #anonymousUser>
       <li  class="nav-item">
