@@ -1,3 +1,4 @@
+import { OrderService } from './order.service';
 import { ShoppingCartService } from './shopping-cart.service';
 import { CategoryService } from './category.service';
 import { AdminAuthGuard } from './admin-auth-guard.service';
@@ -24,13 +25,16 @@ import { ProductsComponent } from './products/products.component';
 import { ShoppingChartComponent } from './shopping-chart/shopping-chart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
-import { MyOrderComponent } from './my-order/my-order.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductService } from './product.service';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { MyOrderComponent } from './my-order/my-order.component';
 
 
 @NgModule({
@@ -42,13 +46,16 @@ import { ProductCardComponent } from './product-card/product-card.component';
     ShoppingChartComponent,
     CheckOutComponent,
     OrderSuccessComponent,
-    MyOrderComponent,
     LoginComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
     ProductFilterComponent,
     ProductFormComponent,
     ProductCardComponent,
+    ProductQuantityComponent,
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent,
+    MyOrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
       { path:'login', component:  LoginComponent},
       
       { path:'check-out', component: CheckOutComponent, canActivate:[AuthGuard]  },
-      { path:'order-success', component: OrderSuccessComponent, canActivate:[AuthGuard] },
+      { path:'order-success/:id', component: OrderSuccessComponent, canActivate:[AuthGuard] },
       { path:'my/orders', component: MyOrderComponent, canActivate:[AuthGuard] },
   
       
@@ -95,7 +102,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     UserService,
     CategoryService,
     ProductService,
-    ShoppingCartService
+    ShoppingCartService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })
