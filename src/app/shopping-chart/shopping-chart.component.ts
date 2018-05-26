@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-chart.component.css']
 })
 export class ShoppingChartComponent implements OnInit {
-cart$;
+  cart$;
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
@@ -15,7 +15,7 @@ cart$;
     this.cart$ = await this.shoppingCartService.getCart();
   }
 
-  clearCart(){
+  clearCart() { 
     this.shoppingCartService.clearCart();
   }
 }

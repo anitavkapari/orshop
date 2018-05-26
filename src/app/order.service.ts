@@ -21,8 +21,7 @@ export class OrderService {
     return this.db.list('/orders', {
       query: {
         orderByChild: 'userId',
-        equalTo: userId,  
-            
+        equalTo: userId        
       }
     });
   }

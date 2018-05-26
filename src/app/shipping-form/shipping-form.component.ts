@@ -15,6 +15,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
   @Input('cart') cart: ShoppingCart;
   shipping = {};
   userId: string;
+  name: string;
   userSubscription: Subscription;
 
 
@@ -27,6 +28,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
       this.userSubscription = this.authService.user$.subscribe(user => this.userId = user.uid);
+      
     }
 
     ngOnDestroy(){
