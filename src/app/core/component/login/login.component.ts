@@ -11,6 +11,8 @@ export class LoginComponent {
   }
 
   login() { 
+    if(!confirm('Are usure u want to LogIn ?'))return;
+
     this.auth.login();
   }
 }

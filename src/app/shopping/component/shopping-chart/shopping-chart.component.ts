@@ -16,6 +16,11 @@ export class ShoppingChartComponent implements OnInit {
   }
 
   clearCart() { 
+    if(!confirm('Are usure u want to clear this product list in ur shopping cart?'))return;
+
     this.shoppingCartService.clearCart();
+
   }
+ 
+   
 }

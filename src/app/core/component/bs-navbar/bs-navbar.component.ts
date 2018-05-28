@@ -23,6 +23,8 @@ export class BsNavbarComponent implements OnInit {
   }
 
   logout() {
+    if(!confirm('Are usure u want to LogOut ?'))return;
+
     this.auth.logout();
   }
 
